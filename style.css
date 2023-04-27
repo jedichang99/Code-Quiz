@@ -66,7 +66,15 @@ button:hover{
 }
 
 #timer{
-    flex-direction: row-reverse;
-    display: flex;
-    color: red;
+  flex-direction: row-reverse;
+  display: flex;
+  color: red;
+}
+
+#correct{
+  padding-top: 320px;
+}
+
+.hidden{
+  display: none;
 }

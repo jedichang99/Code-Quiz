@@ -1,3 +1,4 @@
+var currentlySelected;
 (function(){
   // Functions
   function wirteQuiz(){
@@ -7,22 +8,23 @@
     // for each question...
     Questions.forEach(
       (currentQuestion, questionNumber) => {
-
+        console.log(questionNumber)
         // variable to store the list of possible answers
         const answers = [];
-
+        var i = 0
         // and for each available answer...
-        for(letter in currentQuestion.answers){
-
+        for(var letter in currentQuestion.answers){
+          i++
           // ...add an HTML radio button
+          // make sure that this is the correct order, answer 
           answers.push(
             `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
+              <input type="radio" class="answer" data-name="${letter}" />
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
           );
-        }
+          }
 
         // add this question and its answers to the output
         output.push(
@@ -58,6 +60,8 @@
       if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
+       
+
 
         // color the answers green
         answerContainers[questionNumber].style.color = 'lightgreen';
@@ -66,6 +70,7 @@
       else{
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
+
       }
     });
 
@@ -74,6 +79,31 @@
   }
 
   function showSlide(n) {
+    // was the question right or wrong
+    var question = Questions[n]
+    var answersInputs = document.querySelectorAll('.answer')
+    var selectedAnswer;
+    for (var i = 0; i < answersInputs.length; i++) {
+      if (answersInputs[i].checked) {
+        selectedAnswer = answersInputs[i].dataset.name
+      }
+    }
+
+    // what answer was selected vs what answer was correct
+
+    console.log(question.correctAnswer, selectedAnswer)
+
+    if (question.correctAnswer === selectedAnswer) {
+      // right
+      //todo
+      document.getElementById("correct").classList.remove('hidden');
+
+    } else {
+      //todo
+      // wrong
+      document.getElementById("wrong").classList.remove("hidden")
+    }
+
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
@@ -228,6 +258,10 @@
     }
 ];
 
+
+
+
+
   // Kick things off
   wirteQuiz();
 
@@ -247,7 +281,7 @@
 })();
 
 
-const startTime = 10;
+const startTime = 1;
 let time = startTime * 60; 
 
 const countDown = document.getElementById("timer");
@@ -258,14 +292,25 @@ function nextTime() {
     const min = Math.floor(time / 60);
     let sec = time % 60;
 
-    sec = sec < 10 ? "0" + sec : sec;
+    sec = sec < 1 ? "0" + sec : sec;
 
     countDown.innerHTML = `${min}:${sec}`;
     time--;
 
+//todo
+    // if (TotalSeconds <= 0)
+    // window.setTimeout("Tick()", 1000)
+
+//todo
 //when a question is wrong the time - 5 secs
-  //   document.getElementById('incorrect').addEventListener('click', function() {
+  //  document.getElementById('incorrect').addEventListener('click', function() {
   //     sec -= 5;
   //     document.getElementById('timerDisplay').innerHTML='00:'+sec;
   // });
 }//();
+
+
+
+
+//this is where the cokie is being baked
+document.cookie = "resultsContainer; expires=Wed, 05 Aug 2023 23:00:00 UTC";
