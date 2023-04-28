@@ -72,9 +72,18 @@ button:hover{
 }
 
 #correct{
-  padding-top: 320px;
+  color: green;
 }
 
 .hidden{
+  display: none;
+}
+
+#wrong{
+  color: red;
+}
+
+
+#initials{
   display: none;
 }
