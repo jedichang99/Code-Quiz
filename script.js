@@ -242,111 +242,111 @@ let numCorrect = 0;
       },
       correctAnswer: "c",
     },
-    // {
-    //   question:
-    //     "Which of the following is not a valid method for generating output to the screen?",
-    //   answers: {
-    //     a: "prompt",
-    //     b: "document.write",
-    //     c: "alert",
-    //     d: "print",
-    //   },
-    //   correctAnswer: "d",
-    // },
-    // {
-    //   question:
-    //     "Which of these options does NOT require the use of parentheses?",
-    //   answers: {
-    //     a: "innerHTML",
-    //     b: "document.write",
-    //     c: "alert",
-    //     d: "console.log",
-    //   },
-    //   correctAnswer: "A",
-    // },
-    // {
-    //   question:
-    //     "Which of the following does not generate output directly to the screen?",
-    //   answers: {
-    //     a: "document.write(message);",
-    //     b: "console.log(message);",
-    //     c: "alert",
-    //     d: "element.innerHTML = message;t",
-    //   },
-    //   correctAnswer: "b",
-    // },
-    // {
-    //   question: "How does prompt differ from alert?",
-    //   answers: {
-    //     a: "Only alert uses parentheses.",
-    //     b: "Only prompt uses parentheses.",
-    //     c: "The alert will return a value, prompt does not.",
-    //     d: "The prompt will return a value, alert does not.",
-    //   },
-    //   correctAnswer: "d",
-    // },
-    // {
-    //   question: "Which of the following is not a valid variable name?",
-    //   answers: {
-    //     a: "variable1",
-    //     b: "variableOne",
-    //     c: "1variable",
-    //     d: "oneVariable",
-    //   },
-    //   correctAnswer: "c",
-    // },
-    // {
-    //   question: "Which of the following is not a valid variable name?",
-    //   answers: {
-    //     a: "variable-2",
-    //     b: "variable_2",
-    //     c: "variable$2",
-    //     d: "variable_1",
-    //   },
-    //   correctAnswer: "a",
-    // },
-    // {
-    //   question: "When a function returns a node from the DOM, it is of type",
-    //   answers: {
-    //     a: "Number",
-    //     b: "String",
-    //     c: "Object",
-    //     d: "Boolean",
-    //   },
-    //   correctAnswer: "c",
-    // },
-    // {
-    //   question:
-    //     "A function that wants to return multiple values at once (such as document.getElementsByTagName) will return a/an",
-    //   answers: {
-    //     a: "Number",
-    //     b: "String",
-    //     c: "alert",
-    //     d: "Array",
-    //   },
-    //   correctAnswer: "d",
-    // },
-    // {
-    //   question: "Which of the following is not a valid operator?",
-    //   answers: {
-    //     a: " =+",
-    //     b: "++",
-    //     c: "==",
-    //     d: "+=",
-    //   },
-    //   correctAnswer: "a",
-    // },
-    // {
-    //   question:
-    //     "Which tag is used to let the browser know that it is about to see JavaScript code?",
-    //   answers: {
-    //     a: "js",
-    //     b: "script",
-    //     c: "stylesheet",
-    //     d: "head",
-    //   },
-    //   correctAnswer: "b",
-    // },
+    {
+      question:
+        "Which of the following is not a valid method for generating output to the screen?",
+      answers: {
+        a: "prompt",
+        b: "document.write",
+        c: "alert",
+        d: "print",
+      },
+      correctAnswer: "d",
+    },
+    {
+      question:
+        "Which of these options does NOT require the use of parentheses?",
+      answers: {
+        a: "innerHTML",
+        b: "document.write",
+        c: "alert",
+        d: "console.log",
+      },
+      correctAnswer: "A",
+    },
+    {
+      question:
+        "Which of the following does not generate output directly to the screen?",
+      answers: {
+        a: "document.write(message);",
+        b: "console.log(message);",
+        c: "alert",
+        d: "element.innerHTML = message;t",
+      },
+      correctAnswer: "b",
+    },
+    {
+      question: "How does prompt differ from alert?",
+      answers: {
+        a: "Only alert uses parentheses.",
+        b: "Only prompt uses parentheses.",
+        c: "The alert will return a value, prompt does not.",
+        d: "The prompt will return a value, alert does not.",
+      },
+      correctAnswer: "d",
+    },
+    {
+      question: "Which of the following is not a valid variable name?",
+      answers: {
+        a: "variable1",
+        b: "variableOne",
+        c: "1variable",
+        d: "oneVariable",
+      },
+      correctAnswer: "c",
+    },
+    {
+      question: "Which of the following is not a valid variable name?",
+      answers: {
+        a: "variable-2",
+        b: "variable_2",
+        c: "variable$2",
+        d: "variable_1",
+      },
+      correctAnswer: "a",
+    },
+    {
+      question: "When a function returns a node from the DOM, it is of type",
+      answers: {
+        a: "Number",
+        b: "String",
+        c: "Object",
+        d: "Boolean",
+      },
+      correctAnswer: "c",
+    },
+    {
+      question:
+        "A function that wants to return multiple values at once (such as document.getElementsByTagName) will return a/an",
+      answers: {
+        a: "Number",
+        b: "String",
+        c: "alert",
+        d: "Array",
+      },
+      correctAnswer: "d",
+    },
+    {
+      question: "Which of the following is not a valid operator?",
+      answers: {
+        a: " =+",
+        b: "++",
+        c: "==",
+        d: "+=",
+      },
+      correctAnswer: "a",
+    },
+    {
+      question:
+        "Which tag is used to let the browser know that it is about to see JavaScript code?",
+      answers: {
+        a: "js",
+        b: "script",
+        c: "stylesheet",
+        d: "head",
+      },
+      correctAnswer: "b",
+    },
   ];
 
   // Kick things off
@@ -360,6 +360,8 @@ let numCorrect = 0;
 
   // Show the first slide
   showSlide(currentSlide);
+  let scorebutton = document.getElementById("highScores");
+  scorebutton.addEventListener("click", showScore);
 
   // Event listeners
   startBtn.addEventListener("click", onStartQuiz);
@@ -369,6 +371,3 @@ let numCorrect = 0;
 
 // //todo this is where the cokie is being baked
 // document.cookie = "resultsContainer; expires=Wed, 05 Aug 2023 23:00:00 UTC";
-
-let scorebutton = document.getElementById("highScores");
-scorebutton.addEventListener("click", showScore);
